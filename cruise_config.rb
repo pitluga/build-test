@@ -4,4 +4,6 @@ Project.configure do |project|
     when "passing_build" then "rake test:passing"
     else raise "not found"
   end
+
+  project.elastic_build.pool = :testpool if project.respond_to? :elastic_build
 end
