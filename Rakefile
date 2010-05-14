@@ -7,3 +7,9 @@ end
 Rake::TestTask.new('test:failing') do |t|
   t.pattern = "test/failing.rb"
 end
+
+task :make_artifcat do
+  File.open(File.join(ENV["CC_BUILD_ARTIFACTS"], "artifact.txt"), "w") do |file|
+    file.write "check it out."
+  end
+end
